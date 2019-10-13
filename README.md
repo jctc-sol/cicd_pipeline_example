@@ -29,3 +29,9 @@ In your local terminal, use the following code to set up additional branches and
 ```
 git checkout -b <BRANCH_NAME>
 git push origin <BRNACH_NAME>
+```
+
+### 1.3 Setup Branch Protections
+With multple branches created, we will want to protect our master and staging branches against code pushes without pull requests. You can turn on these protections for your repository by going to the *Settings* tab on the top and select *Branches* on the left hand selection list as illustrated below:
+
+![Image description](./screenshots/branch_permission_setting.png)
