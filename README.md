@@ -35,3 +35,9 @@ git push origin <BRNACH_NAME>
 With multple branches created, we will want to protect our master and staging branches against code pushes without pull requests. You can turn on these protections for your repository by going to the *Settings* tab on the top and select *Branches* on the left hand selection list as illustrated below:
 
 ![Image description](./screenshots/branch_permission_setting.png)
+
+We will create branch protection rules for both the master and staging branches by checking off the ***Require pull request reviews before merging*** plus ***Dismiss stale pull request approvals when new commits are pushed***. Furthermore, we will enforce these rules also upon the administrators. 
+
+(A nice protection to also include might be the ***Require review from Code Owners*** options, which you can read more here: https://help.github.com/en/articles/about-code-owners)
+
+In additional, we will also check off ***Require status checks to pass before merging*** and its sub-checkbox ***Require branches to be up to date before merging***. More details about these status checks later, which will be provided by external build services that will be setup later.
