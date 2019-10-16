@@ -37,9 +37,7 @@ With multple branches created, we will want to protect our master and staging br
 ![Github branch permission setting](./screenshots/branch_permission_setting.png)
 
 
-We will create branch protection rules for both the master and staging branches:
-
-We will also check off ***Require status checks to pass before merging*** and its sub-checkbox ***Require branches to be up to date before merging***. You likely won't have any status checks in place yet (as shown by the *mldevops-Python package-CI* checkbox in the above screenshot). More details about these status checks later, we will leverage external build services that will in later section.
+We will create branch protection rules for both the master and staging branches. We will also check off ***Require status checks to pass before merging*** and its sub-checkbox ***Require branches to be up to date before merging***. You likely won't have any status checks in place yet (as shown by the *mldevops-Python package-CI* checkbox in the above screenshot). More details about these status checks later, we will leverage external build services that will in later section.
 
 (Note: If you are working in a team environment, it is a good idea to check off the ***Require pull request reviews before merging*** plus ***Dismiss stale pull request approvals when new commits are pushed***. This provides a mechanism to enforce peer code review process. A nice protection to also include might be the ***Require review from Code Owners*** options, which you can read more here: https://help.github.com/en/articles/about-code-owners)
 
@@ -67,7 +65,7 @@ Once you see your repository is connected with Cloud Build, you can then create 
 
 In the following menu, you will need to configure your trigger such that Cloud Build will get triggered when specific actions are done to the repository branch(es). The figure below provides the basic setting for Cloud Build to trigger based on a pull request made to the staging branch of the repository. Note that the *Cloud Build Configuration file (yaml or json)* option has been selected and that Cloud Build will expect the build configuration to be located in the root directory of the repository, named *cloudbuild.yaml*.
 
-![Cloud build trigger configurations](./screenshots/gcp_trigger_config.png =250)
+![Cloud build trigger configurations](./screenshots/gcp_trigger_config.png =250x)
 
 #### Creating a configuration yaml file
 The *cloudbuild.yaml* file ...
