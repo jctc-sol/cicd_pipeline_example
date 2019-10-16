@@ -65,7 +65,7 @@ Once you see your repository is connected with Cloud Build, you can then create 
 
 In the following menu, you will need to configure your trigger such that Cloud Build will get triggered when specific actions are done to the repository branch(es). The figure below provides the basic setting for Cloud Build to trigger based on a pull request made to the staging branch of the repository. Note that the *Cloud Build Configuration file (yaml or json)* option has been selected and that Cloud Build will expect the build configuration to be located in the root directory of the repository, named *cloudbuild.yaml*.
 
-<img src="./screenshots/gcp_trigger_config.png" alt="Cloud build trigger configurations" width="600"/>
+<img src="./screenshots/gcp_trigger_config.png" alt="Cloud build trigger configurations" width="550"/>
 
 #### Creating a configuration yaml file
 The *cloudbuild.yaml* file ...
