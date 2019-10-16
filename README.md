@@ -34,7 +34,7 @@ git push origin <BRNACH_NAME>
 ### 1.3 Setup Branch Protections
 With multple branches created, we will want to protect our master and staging branches against code pushes without pull requests. You can turn on these protections for your repository by going to the *Settings* tab on the top and select *Branches* on the left hand selection list as illustrated below:
 
-![Image description](./screenshots/branch_permission_setting.png)
+![Github branch permission setting](./screenshots/branch_permission_setting.png)
 
 
 We will create branch protection rules for both the master and staging branches:
@@ -60,14 +60,14 @@ A GCP account and project needs to be created first. In GCP console, navigate to
 
 You might be prompted to install Cloud Build to your Github repository. A window will pop-up and ask for your Github login, enter your credential to grant Cloud Build access to your repository. Afterwards, you will see list of repositories under your Github account show up on the Cloud Build interface. Select the repository you want to connect to and click *Connect repository*.
 
-![Image description](./screenshots/gcp_connect_repo.png)
+![connecting Cloud Build to your repository](./screenshots/gcp_connect_repo.png)
 
 #### Creating triggers
 Once you see your repository is connected with Cloud Build, you can then create *trigger(s)*. Click on the three dots icon on the right of your listed repository and select *Add trigger*. 
 
 In the following menu, you will need to configure your trigger such that Cloud Build will get triggered when specific actions are done to the repository branch(es). The figure below provides the basic setting for Cloud Build to trigger based on a pull request made to the staging branch of the repository. Note that the *Cloud Build Configuration file (yaml or json)* option has been selected and that Cloud Build will expect the build configuration to be located in the root directory of the repository, named *cloudbuild.yaml*.
 
-![Image description](./screenshots/gcp_trigger_config.png)
+![Cloud build trigger configurations](./screenshots/gcp_trigger_config.png =250)
 
 #### Creating a configuration yaml file
 The *cloudbuild.yaml* file ...
