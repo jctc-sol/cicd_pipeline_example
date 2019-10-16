@@ -44,3 +44,30 @@ We will also check off ***Require status checks to pass before merging*** and it
 (Note: If you are working in a team environment, it is a good idea to check off the ***Require pull request reviews before merging*** plus ***Dismiss stale pull request approvals when new commits are pushed***. This provides a mechanism to enforce peer code review process. A nice protection to also include might be the ***Require review from Code Owners*** options, which you can read more here: https://help.github.com/en/articles/about-code-owners)
 
 
+## 2. Setup Continuous Integration (CI) Pipeline
+
+The purpose of the CI pipeline is to ensure that any net-new changes to the code base does not break the existing code base. This is typically enforced by a series of unit tests conducted on the code. In this section, we will leverage cloud services to create CI pipeline to automates this testing process. More specifically we will configure our repository to trigger the CI pipeline everytime there is a new pull request created, attempting to merge code from the *dev* branch to *staging* branch.
+
+### 2.1 Setting up CI Pipeline in Azure
+
+...
+
+
+### 2.2 Setting up CI Pipeline in Google Cloud Platform (GCP)
+
+#### Connecting repository to Cloud Build
+A GCP account and project needs to be created first. In GCP console, navigate to ***Cloud Build*** interface. First, you will need to connect your repository to Cloud Build by allowing it access. Click on the *Connect repository* button on the top and you will see option to connect either a Github or Bitbucket repository.
+
+You might be prompted to install Cloud Build to your Github repository. A window will pop-up and ask for your Github login, enter your credential to grant Cloud Build access to your repository. Afterwards, you will see list of repositories under your Github account show up on the Cloud Build interface. Select the repository you want to connect to and click *Connect repository*.
+
+![Image description](./screenshots/gcp_connect_repo.png)
+
+#### Creating triggers
+Once you see your repository is connected with Cloud Build, you can then create *trigger(s)*. Click on the three dots icon on the right of your listed repository and select *Add trigger*. 
+
+In the following menu, you will need to configure your trigger such that Cloud Build will get triggered when specific actions are done to the repository branch(es). The figure below provides the basic setting for Cloud Build to trigger based on a pull request made to the staging branch of the repository. Note that the *Cloud Build Configuration file (yaml or json)* option has been selected and that Cloud Build will expect the build configuration to be located in the root directory of the repository, named *cloudbuild.yaml*.
+
+![Image description](./screenshots/gcp_trigger_config.png)
+
+#### Creating a configuration yaml file
+The *cloudbuild.yaml* file ...
